@@ -65,7 +65,7 @@ class _IntroScreenState extends State<IntroScreen> {
                 child: Icon(
                   page.icon,
                   size: 125.0,
-                  color: white,
+                  color: blue,
                 ),
               ),
               Padding(
@@ -76,7 +76,7 @@ class _IntroScreenState extends State<IntroScreen> {
                   softWrap: true,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: white,
+                    color: blue,
                     decoration: TextDecoration.none,
                     fontSize: 15.0,
                     fontWeight: FontWeight.w300,
@@ -85,9 +85,19 @@ class _IntroScreenState extends State<IntroScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: page.extraWidget,
-              )
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text(
+                    page.description,
+                    softWrap: true,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: blue,
+                      decoration: TextDecoration.none,
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.w300,
+                      fontFamily: "OpenSans",
+                    ),
+                  ))
             ],
           ),
         ),
@@ -95,7 +105,7 @@ class _IntroScreenState extends State<IntroScreen> {
     }
     widgets.add(
       new Container(
-        color: blue,
+        color: white,
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -129,14 +139,14 @@ class _IntroScreenState extends State<IntroScreen> {
                   title: "Get Started",
                   fontSize: 22,
                   fontWeight: FontWeight.w700,
-                  textColor: blue,
+                  textColor: white,
                   onPressed: () {
                     Navigator.of(context).pushNamed(SIGN_IN);
                   },
                   splashColor: black,
-                  borderColor: blue,
+                  borderColor: white,
                   borderWidth: 2,
-                  color: white,
+                  color: blue,
                 ),
               ),
             ],
