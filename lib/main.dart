@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:infoss_hrd/scr/commons.dart';
 import 'package:infoss_hrd/scr/constant/constants.dart';
+import 'package:infoss_hrd/scr/ui/screen/forgot_password.dart';
 import 'package:infoss_hrd/scr/ui/screen/intro_page.dart';
 import 'package:infoss_hrd/scr/ui/screen/sign_in.dart';
 import 'package:infoss_hrd/scr/ui/screen/splash_screen.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         SPLASH_SCREEN: (BuildContext context) => SplashScreen(),
         SIGN_IN: (BuildContext context) => SignInPage(),
-        //  FORGOT_PASSWORD: (BuildContext context) => ForgotPassword(),
+        FORGOT_PASSWORD: (BuildContext context) => ForgotPassword(),
         INTRO: (BuildContext context) => IntroScreen(),
       },
       home: _handleCurrentScreen(),

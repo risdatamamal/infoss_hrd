@@ -7,12 +7,12 @@ class CustomAppBar extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     return Material(
       child: Container(
-        height: height / 10,
+        height: height / 8.5,
         width: width,
         padding: EdgeInsets.only(left: 15, top: 25),
         decoration: BoxDecoration(
           gradient:
-              LinearGradient(colors: [Colors.orange[200], Colors.pinkAccent]),
+              LinearGradient(colors: [Colors.blue[200], Colors.blueAccent]),
         ),
         child: Row(
           children: <Widget>[
@@ -21,7 +21,7 @@ class CustomAppBar extends StatelessWidget {
                 onPressed: () {
                   print("pop");
                   Navigator.of(context).pop();
-                }),
+                })
           ],
         ),
       ),

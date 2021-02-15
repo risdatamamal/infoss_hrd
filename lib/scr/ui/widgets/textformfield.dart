@@ -17,7 +17,7 @@ class CustomTextField extends StatelessWidget {
       {this.hint,
       this.textEditingController,
       this.keyboardType,
-      this.obscureText,
+      this.obscureText = false,
       this.icon});
 
   @override
@@ -32,9 +32,9 @@ class CustomTextField extends StatelessWidget {
       child: TextFormField(
         controller: textEditingController,
         keyboardType: keyboardType,
-        cursorColor: Colors.green[200],
+        cursorColor: Colors.blueAccent[200],
         decoration: InputDecoration(
-            prefix: Icon(icon, color: Colors.green[200], size: 20),
+            prefix: Icon(icon, color: Colors.blueAccent[200], size: 20),
             hintText: hint,
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(30.0),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:infoss_hrd/scr/commons.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import '../../commons.dart';
 
 class HomePage extends StatefulWidget {
   final VoidCallback signOut;
@@ -25,8 +24,8 @@ class _HomePageState extends State<HomePage> {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     setState(() {
       company = sharedPreferences.get("company");
-      name = sharedPreferences.get("name");
-      position = sharedPreferences.get("position");
+      name = sharedPreferences.get("nama");
+      position = sharedPreferences.get("posisi");
     });
   }
 

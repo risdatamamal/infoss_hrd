@@ -97,7 +97,9 @@ class _IntroScreenState extends State<IntroScreen> {
                       fontWeight: FontWeight.w300,
                       fontFamily: "OpenSans",
                     ),
-                  ))
+                  )),
+              Padding(
+                  padding: const EdgeInsets.all(10.0), child: page.extraWidget),
             ],
           ),
         ),
