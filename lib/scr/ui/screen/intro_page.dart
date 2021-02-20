@@ -16,24 +16,27 @@ class IntroScreen extends StatefulWidget {
           scale: 1.2,
           alignment: Alignment.topLeft,
         ),
-        title: "Selamat Datang Karyawan Terhormat",
-        description: "Informasi untuk Para Karyawan"),
+        title: "Let us take care of you",
+        description:
+            "We are here to take care of you with pleasure. besides that we will monitor your condition 24/Day"),
     IntroModel(
         image: Image.asset(
           "assets/gambar/Illustration-2.png",
           scale: 1.2,
           alignment: Alignment.topLeft,
         ),
-        title: "Informative",
-        description: "Aplikasi Mobile yang Sangat Informatif"),
+        title: "Always use a mask",
+        description:
+            "always use a mask when you want to travel and keep your body immunity"),
     IntroModel(
         image: Image.asset(
           "assets/gambar/Illustration-3.png",
           scale: 1.2,
           alignment: Alignment.topLeft,
         ),
-        title: "Informative",
-        description: "Aplikasi Mobile yang Sangat Informatif"),
+        title: "Work from home",
+        description:
+            "to avoid the spread of covid 19. you can do office work from home and always be close to your family"),
   ];
 
   IntroScreen({this.prefs});
@@ -72,57 +75,83 @@ class _IntroScreenState extends State<IntroScreen> {
           color: white,
           child: Stack(
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(top: 70.0),
-                child: page.image,
+              Container(
+                color: white,
               ),
-              Padding(
-                padding:
-                    const EdgeInsets.only(top: 10.0, right: 15.0, left: 15.0),
-                child: Text(
-                  page.title,
-                  softWrap: true,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: blue,
-                    decoration: TextDecoration.none,
-                    fontSize: 15.0,
-                    fontWeight: FontWeight.w300,
-                    fontFamily: "OpenSans",
+              SafeArea(
+                child: Container(
+                  alignment: Alignment.centerLeft,
+                  color: Color(0xffECF8FF),
+                  child: page.image,
+                ),
+              ),
+              SafeArea(
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    width: 500,
+                    height: 200,
+                    child: Card(
+                      shadowColor: Colors.transparent,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.0),
+                      ),
+                      color: white,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Center(
+                            child: Text(
+                              page.title,
+                              softWrap: true,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: blue,
+                                decoration: TextDecoration.none,
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Poppins',
+                              ),
+                            ),
+                          ),
+                          Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Text(
+                                page.description,
+                                softWrap: true,
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: blue,
+                                  decoration: TextDecoration.none,
+                                  fontSize: 14.0,
+                                  fontFamily: 'Poppins',
+                                ),
+                              )),
+                          Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: page.extraWidget),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               ),
-              Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Text(
-                    page.description,
-                    softWrap: true,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: blue,
-                      decoration: TextDecoration.none,
-                      fontSize: 15.0,
-                      fontWeight: FontWeight.w300,
-                      fontFamily: "OpenSans",
-                    ),
-                  )),
-              Padding(
-                  padding: const EdgeInsets.all(10.0), child: page.extraWidget),
             ],
           ),
         ),
       );
     }
+
     widgets.add(
       new Container(
-        color: white,
+        color: Color(0xffECF8FF),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Icon(
-                Icons.code,
+                Icons.check,
                 size: 125.0,
                 color: blue,
               ),
@@ -130,7 +159,7 @@ class _IntroScreenState extends State<IntroScreen> {
                 padding:
                     const EdgeInsets.only(top: 50.0, right: 15.0, left: 15.0),
                 child: Text(
-                  "Jump straight into the action.",
+                  "Start your work today.",
                   softWrap: true,
                   textAlign: TextAlign.center,
                   style: TextStyle(
