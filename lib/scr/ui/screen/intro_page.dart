@@ -11,15 +11,27 @@ class IntroScreen extends StatefulWidget {
 
   final List<IntroModel> pages = [
     IntroModel(
-        icon: Icons.star,
+        image: Image.asset(
+          "assets/gambar/Illustration-1.png",
+          scale: 1.2,
+          alignment: Alignment.topLeft,
+        ),
         title: "Selamat Datang Karyawan Terhormat",
         description: "Informasi untuk Para Karyawan"),
     IntroModel(
-        icon: Icons.ac_unit,
-        title: "Dengan Desain Memukau",
-        description: "blablablabla"),
+        image: Image.asset(
+          "assets/gambar/Illustration-2.png",
+          scale: 1.2,
+          alignment: Alignment.topLeft,
+        ),
+        title: "Informative",
+        description: "Aplikasi Mobile yang Sangat Informatif"),
     IntroModel(
-        icon: Icons.info_outline,
+        image: Image.asset(
+          "assets/gambar/Illustration-3.png",
+          scale: 1.2,
+          alignment: Alignment.topLeft,
+        ),
         title: "Informative",
         description: "Aplikasi Mobile yang Sangat Informatif"),
   ];
@@ -58,19 +70,15 @@ class _IntroScreenState extends State<IntroScreen> {
       widgets.add(
         new Container(
           color: white,
-          child: ListView(
+          child: Stack(
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.only(top: 70.0),
-                child: Icon(
-                  page.icon,
-                  size: 125.0,
-                  color: blue,
-                ),
+                child: page.image,
               ),
               Padding(
                 padding:
-                    const EdgeInsets.only(top: 50.0, right: 15.0, left: 15.0),
+                    const EdgeInsets.only(top: 10.0, right: 15.0, left: 15.0),
                 child: Text(
                   page.title,
                   softWrap: true,

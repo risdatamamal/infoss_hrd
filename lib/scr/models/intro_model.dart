@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class IntroModel {
-  IconData icon;
+  Image image;
   String title;
   String description;
   Widget extraWidget;
 
-  IntroModel({this.icon, this.title, this.description, this.extraWidget}) {
+  IntroModel({this.image, this.title, this.description, this.extraWidget}) {
     if (extraWidget == null) {
       extraWidget = new Container();
     }

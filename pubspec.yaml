@@ -51,7 +51,11 @@ flutter:
   assets:
     - assets/gambar/Logo.png
     - assets/appbar/Header.png
+    - assets/appbar/Vector-1.png
     - assets/background/logo-background.png
+    - assets/gambar/Illustration-1.png
+    - assets/gambar/Illustration-2.png
+    - assets/gambar/Illustration-3.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
