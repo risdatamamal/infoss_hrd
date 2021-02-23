@@ -5,6 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:infoss_hrd/scr/commons.dart';
 import 'package:infoss_hrd/scr/models/model_all_inbox.dart';
+import 'package:infoss_hrd/scr/ui/screen/education_page.dart';
+import 'package:infoss_hrd/scr/ui/screen/family_information_page.dart';
+import 'package:infoss_hrd/scr/ui/screen/jobexp_page.dart';
+import 'package:infoss_hrd/scr/ui/screen/leave_page.dart';
+import 'package:infoss_hrd/scr/ui/screen/overtime_page.dart';
+import 'package:infoss_hrd/scr/ui/screen/skill_page.dart';
+import 'package:infoss_hrd/scr/ui/screen/training_page.dart';
 import 'package:infoss_hrd/scr/utils/constans_util.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -220,6 +227,11 @@ class _HomePageState extends State<HomePage> {
                                       ),
                                       onTap: () {
                                         print("Click Leave");
+                                        Navigator.push(context,
+                                            MaterialPageRoute(
+                                                builder: (context) {
+                                          return LeavePage();
+                                        }));
                                       },
                                     ),
                                     GestureDetector(
@@ -249,6 +261,11 @@ class _HomePageState extends State<HomePage> {
                                       ),
                                       onTap: () {
                                         print("Click Overtime");
+                                        Navigator.push(context,
+                                            MaterialPageRoute(
+                                                builder: (context) {
+                                          return OvertimePage();
+                                        }));
                                       },
                                     ),
                                   ],
@@ -268,7 +285,7 @@ class _HomePageState extends State<HomePage> {
                                         padding:
                                             const EdgeInsets.only(left: 20.0),
                                         child: Text(
-                                          'Announcement',
+                                          "Announcement",
                                           style: TextStyle(fontSize: 20.0),
                                         ),
                                       ),
@@ -587,6 +604,10 @@ class _HomePageState extends State<HomePage> {
                                 borderRadius: BorderRadius.circular(30.0)),
                             onPressed: () {
                               print("Family");
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return FamilyInformation();
+                              }));
                             },
                             textColor: white,
                             padding: EdgeInsets.all(0.0),
@@ -611,6 +632,10 @@ class _HomePageState extends State<HomePage> {
                                 borderRadius: BorderRadius.circular(30.0)),
                             onPressed: () {
                               print("Education");
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return EducationPage();
+                              }));
                             },
                             textColor: white,
                             padding: EdgeInsets.all(0.0),
@@ -635,6 +660,10 @@ class _HomePageState extends State<HomePage> {
                                 borderRadius: BorderRadius.circular(30.0)),
                             onPressed: () {
                               print("Skill");
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return SkillPage();
+                              }));
                             },
                             textColor: white,
                             padding: EdgeInsets.all(0.0),
@@ -659,6 +688,10 @@ class _HomePageState extends State<HomePage> {
                                 borderRadius: BorderRadius.circular(30.0)),
                             onPressed: () {
                               print("Job Experience");
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return JobExperiencePage();
+                              }));
                             },
                             textColor: white,
                             padding: EdgeInsets.all(0.0),
@@ -683,6 +716,10 @@ class _HomePageState extends State<HomePage> {
                                 borderRadius: BorderRadius.circular(30.0)),
                             onPressed: () {
                               print("Training");
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return TrainingPage();
+                              }));
                             },
                             textColor: white,
                             padding: EdgeInsets.all(0.0),
@@ -697,6 +734,31 @@ class _HomePageState extends State<HomePage> {
                               ),
                               padding: const EdgeInsets.all(12.0),
                               child: Text('Training',
+                                  style: TextStyle(fontSize: 16)),
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          RaisedButton(
+                            elevation: 0,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0)),
+                            onPressed: () {
+                              print("LogOut Successfull");
+                              signOut();
+                            },
+                            textColor: white,
+                            padding: EdgeInsets.all(0.0),
+                            child: Container(
+                              alignment: Alignment.center,
+                              width: 300,
+                              height: 60,
+                              decoration: BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20.0)),
+                                color: Color(0xff28B0C7),
+                              ),
+                              padding: const EdgeInsets.all(12.0),
+                              child: Text('LogOut',
                                   style: TextStyle(fontSize: 16)),
                             ),
                           ),

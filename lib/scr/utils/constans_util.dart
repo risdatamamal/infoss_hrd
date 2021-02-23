@@ -1,4 +1,4 @@
 class ConstantsUtil {
   // URL backend in here
-  final PUBLIC_API_URL = "http://31bf3c2c0cfa.ngrok.io/infoss_hrd/";
+  final PUBLIC_API_URL = "http://7df08cdbc118.ngrok.io/infoss_hrd/";
 }
