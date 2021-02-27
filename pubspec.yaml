@@ -31,6 +31,8 @@ dependencies:
   flutter_swiper: ^1.1.6
   shared_preferences: ^0.5.12+4
   http: ^0.12.2
+  provider: ^4.3.3
+  get_it: ^3.0.3
 
 dev_dependencies:
   flutter_test:

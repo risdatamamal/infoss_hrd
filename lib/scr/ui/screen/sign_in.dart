@@ -190,6 +190,7 @@ class _SignInScreenState extends State<SignInScreen> {
       keyboardType: TextInputType.emailAddress,
       textEditingController: emailController,
       icon: Icons.person,
+      obscureText: false,
       hint: "Username",
     );
   }

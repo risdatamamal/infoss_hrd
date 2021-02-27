@@ -9,6 +9,7 @@ import 'package:infoss_hrd/scr/ui/screen/education_page.dart';
 import 'package:infoss_hrd/scr/ui/screen/family_information_page.dart';
 import 'package:infoss_hrd/scr/ui/screen/jobexp_page.dart';
 import 'package:infoss_hrd/scr/ui/screen/leave_page.dart';
+import 'package:infoss_hrd/scr/ui/screen/my_profile_page.dart';
 import 'package:infoss_hrd/scr/ui/screen/overtime_page.dart';
 import 'package:infoss_hrd/scr/ui/screen/skill_page.dart';
 import 'package:infoss_hrd/scr/ui/screen/training_page.dart';
@@ -92,7 +93,7 @@ class _HomePageState extends State<HomePage> {
             backgroundColor: white,
             title: Row(
               mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: <Widget>[
                 Padding(
                   padding: const EdgeInsets.only(left: 30.0, top: 5.0),
@@ -136,7 +137,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
 
-              // Page in here
+              // PageHome in here
               SafeArea(
                 child: PageView(
                   controller: pageController,
@@ -194,15 +195,15 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                             Container(
-                              height: 115,
+                              height: 120,
                               child: Card(
                                 shadowColor: Colors.transparent,
                                 color: Colors.transparent,
                                 child: Row(
                                   children: <Widget>[
-                                    GestureDetector(
-                                      child: Container(
-                                        margin: EdgeInsets.only(left: 30.0),
+                                    Expanded(
+                                      flex: 35,
+                                      child: GestureDetector(
                                         child: Card(
                                           color: Color(0xff6BC8D8),
                                           child: Padding(
@@ -224,19 +225,19 @@ class _HomePageState extends State<HomePage> {
                                               borderRadius:
                                                   BorderRadius.circular(20)),
                                         ),
+                                        onTap: () {
+                                          print("Click Leave");
+                                          Navigator.push(context,
+                                              MaterialPageRoute(
+                                                  builder: (context) {
+                                            return LeavePage();
+                                          }));
+                                        },
                                       ),
-                                      onTap: () {
-                                        print("Click Leave");
-                                        Navigator.push(context,
-                                            MaterialPageRoute(
-                                                builder: (context) {
-                                          return LeavePage();
-                                        }));
-                                      },
                                     ),
-                                    GestureDetector(
-                                      child: Container(
-                                        margin: EdgeInsets.only(left: 60.0),
+                                    Expanded(
+                                      flex: 35,
+                                      child: GestureDetector(
                                         child: Card(
                                           color: Color(0xff6BC8D8),
                                           child: Padding(
@@ -258,15 +259,15 @@ class _HomePageState extends State<HomePage> {
                                               borderRadius:
                                                   BorderRadius.circular(20)),
                                         ),
+                                        onTap: () {
+                                          print("Click Overtime");
+                                          Navigator.push(context,
+                                              MaterialPageRoute(
+                                                  builder: (context) {
+                                            return OvertimePage();
+                                          }));
+                                        },
                                       ),
-                                      onTap: () {
-                                        print("Click Overtime");
-                                        Navigator.push(context,
-                                            MaterialPageRoute(
-                                                builder: (context) {
-                                          return OvertimePage();
-                                        }));
-                                      },
                                     ),
                                   ],
                                 ),
@@ -279,32 +280,25 @@ class _HomePageState extends State<HomePage> {
                                 child: Card(
                                   shadowColor: Colors.transparent,
                                   color: Color(0xff28B0C7),
-                                  child: Row(
-                                    children: <Widget>[
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 20.0),
-                                        child: Text(
-                                          "Announcement",
-                                          style: TextStyle(fontSize: 20.0),
-                                        ),
+                                  child: ListTile(
+                                    contentPadding: EdgeInsets.all(25.0),
+                                    title: Text(
+                                      "Announcement",
+                                      style: TextStyle(fontSize: 20.0),
+                                    ),
+                                    trailing: GestureDetector(
+                                      child: Text(
+                                        'View All',
+                                        style: TextStyle(color: white),
                                       ),
-                                      GestureDetector(
-                                        child: Container(
-                                          margin: EdgeInsets.only(left: 120.0),
-                                          child: Text(
-                                            'View All',
-                                            style: TextStyle(color: white),
-                                          ),
-                                        ),
-                                        onTap: () {
-                                          setState(() {
-                                            selectedPage = 1;
-                                          });
-                                          print("Click View All");
-                                        },
-                                      ),
-                                    ],
+                                      onTap: () {
+                                        print("Click View All");
+                                        setState(() {
+                                          selectedPage = 1;
+                                        });
+                                        pageController.jumpToPage(selectedPage);
+                                      },
+                                    ),
                                   ),
                                 ),
                               ),
@@ -580,6 +574,10 @@ class _HomePageState extends State<HomePage> {
                                 borderRadius: BorderRadius.circular(30.0)),
                             onPressed: () {
                               print("My Profile");
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return MyProfilePage();
+                              }));
                             },
                             textColor: white,
                             padding: EdgeInsets.all(0.0),
