@@ -1,22 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:infoss_hrd/scr/commons.dart';
-import 'package:date_range_picker/date_range_picker.dart' as DateRangePicker;
 
-class LeaveAddPage extends StatefulWidget {
+class FamilyInformationAddPage extends StatefulWidget {
   @override
-  _LeaveAddpageState createState() => new _LeaveAddpageState();
+  _FamilyInformationAddpageState createState() =>
+      new _FamilyInformationAddpageState();
 }
 
-class _LeaveAddpageState extends State<LeaveAddPage> {
-  List<String> reason = ["Cuti", "Sakit"];
-  String _reason = "Cuti";
+class _FamilyInformationAddpageState extends State<FamilyInformationAddPage> {
+  List<String> relationship = [
+    "Ayah",
+    "Ibu",
+    "Saudara Perempuan",
+    "Saudara Laki-Laki"
+  ];
+  String _relationship = "Ayah";
 
-  DateTime _startDate = DateTime.now();
-  DateTime _endDate = DateTime.now().add(Duration(days: 7));
+  List<String> gender = ["Laki-Laki", "Perempuan"];
+  String _gender = "Laki-Laki";
 
-  void pilihReason(String value) {
+  List<String> education = ["SD", "SMP", "SMA/SMK", "D3", "S1/D4", "S2", "S3"];
+  String _education = "SD";
+
+  void pilihRelationship(String value) {
     setState(() {
-      _reason = value;
+      _relationship = value;
+    });
+  }
+
+  void pilihGender(String value) {
+    setState(() {
+      _gender = value;
+    });
+  }
+
+  void pilihEducation(String value) {
+    setState(() {
+      _education = value;
     });
   }
 
@@ -88,7 +108,7 @@ class _LeaveAddpageState extends State<LeaveAddPage> {
                         ),
                       ),
                       Text(
-                        "Request Leave",
+                        "Family Information",
                         style: TextStyle(fontSize: 24.0),
                       ),
                     ],
@@ -98,37 +118,86 @@ class _LeaveAddpageState extends State<LeaveAddPage> {
                   padding: const EdgeInsets.all(16.0),
                   child: Column(
                     children: <Widget>[
+                      TextField(
+                        decoration: InputDecoration(
+                            hintText: 'Nama',
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(20.0))),
+                      ),
+                      Container(height: 20),
                       Row(
                         children: [
                           Padding(
                             padding:
                                 const EdgeInsets.only(left: 10.0, right: 30.0),
                             child: Text(
-                              "Alasan",
+                              "Relationship",
                               style: TextStyle(fontSize: 18.0),
                             ),
                           ),
                           DropdownButton(
-                            value: _reason,
-                            items: reason.map((String value) {
+                            value: _relationship,
+                            items: relationship.map((String value) {
                               return new DropdownMenuItem(
                                 value: value,
                                 child: Text(value),
                               );
                             }).toList(),
                             onChanged: (String value) {
-                              pilihReason(value);
+                              pilihRelationship(value);
                             },
                           ),
                         ],
                       ),
                       Container(height: 20),
-                      TextField(
-                        maxLines: 4,
-                        decoration: InputDecoration(
-                            hintText: 'Note',
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(20.0))),
+                      Row(
+                        children: [
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(left: 10.0, right: 30.0),
+                            child: Text(
+                              "Gender",
+                              style: TextStyle(fontSize: 18.0),
+                            ),
+                          ),
+                          DropdownButton(
+                            value: _gender,
+                            items: gender.map((String value) {
+                              return new DropdownMenuItem(
+                                value: value,
+                                child: Text(value),
+                              );
+                            }).toList(),
+                            onChanged: (String value) {
+                              pilihGender(value);
+                            },
+                          ),
+                        ],
+                      ),
+                      Container(height: 20),
+                      Row(
+                        children: [
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(left: 10.0, right: 30.0),
+                            child: Text(
+                              "Education",
+                              style: TextStyle(fontSize: 18.0),
+                            ),
+                          ),
+                          DropdownButton(
+                            value: _education,
+                            items: education.map((String value) {
+                              return new DropdownMenuItem(
+                                value: value,
+                                child: Text(value),
+                              );
+                            }).toList(),
+                            onChanged: (String value) {
+                              pilihEducation(value);
+                            },
+                          ),
+                        ],
                       ),
                     ],
                   ),
@@ -146,7 +215,7 @@ class _LeaveAddpageState extends State<LeaveAddPage> {
                         borderRadius: BorderRadius.circular(18.0),
                         side: BorderSide(color: Color(0xff28B0C7))),
                     child: Text(
-                      "Request",
+                      "Save",
                       style: TextStyle(color: white),
                     ),
                     onPressed: () {

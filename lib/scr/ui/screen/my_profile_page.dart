@@ -52,26 +52,132 @@ class MyProfilePage extends StatelessWidget {
             ),
           ),
           SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: GestureDetector(
-                      child: Image(
-                          image: AssetImage("assets/icon/previous-button.png")),
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: GestureDetector(
+                          child: Image(
+                              image: AssetImage(
+                                  "assets/icon/previous-button.png")),
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                        ),
+                      ),
+                      Text(
+                        "My Profile",
+                        style: TextStyle(fontSize: 24.0),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 460,
+                  padding: EdgeInsets.only(left: 16, top: 25, right: 16),
+                  child: GestureDetector(
+                    onTap: () {
+                      FocusScope.of(context).unfocus();
+                    },
+                    child: ListView(
+                      children: [
+                        TextField(
+                          decoration: InputDecoration(
+                            labelText: "NIK",
+                            floatingLabelBehavior: FloatingLabelBehavior.always,
+                            hintText: "317xxxxxxxx",
+                            hintStyle: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: black),
+                          ),
+                        ),
+                        TextField(
+                          decoration: InputDecoration(
+                            labelText: "Full Name",
+                            floatingLabelBehavior: FloatingLabelBehavior.always,
+                            hintText: "Emon Sulaksana",
+                            hintStyle: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: black),
+                          ),
+                        ),
+                        TextField(
+                          decoration: InputDecoration(
+                            labelText: "Nickname",
+                            floatingLabelBehavior: FloatingLabelBehavior.always,
+                            hintText: "Emon",
+                            hintStyle: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: black),
+                          ),
+                        ),
+                        TextField(
+                          decoration: InputDecoration(
+                            labelText: "Departement",
+                            floatingLabelBehavior: FloatingLabelBehavior.always,
+                            hintText: "Kominfo",
+                            hintStyle: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: black),
+                          ),
+                        ),
+                        TextField(
+                          decoration: InputDecoration(
+                            labelText: "Job Title",
+                            floatingLabelBehavior: FloatingLabelBehavior.always,
+                            hintText: "Staff Karyawan",
+                            hintStyle: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: black),
+                          ),
+                        ),
+                        TextField(
+                          decoration: InputDecoration(
+                            labelText: "Grade",
+                            floatingLabelBehavior: FloatingLabelBehavior.always,
+                            hintText: "Grade",
+                            hintStyle: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: black),
+                          ),
+                        ),
+                        TextField(
+                          decoration: InputDecoration(
+                            labelText: "Level",
+                            floatingLabelBehavior: FloatingLabelBehavior.always,
+                            hintText: "Level",
+                            hintStyle: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: black),
+                          ),
+                        ),
+                        TextField(
+                          decoration: InputDecoration(
+                            labelText: "Atasan",
+                            floatingLabelBehavior: FloatingLabelBehavior.always,
+                            hintText: "Atasan",
+                            hintStyle: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: black),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  Text(
-                    "My Profile",
-                    style: TextStyle(fontSize: 24.0),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ],

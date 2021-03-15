@@ -741,7 +741,7 @@ class _HomePageState extends State<HomePage> {
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(30.0)),
                             onPressed: () {
-                              print("LogOut Successfull");
+                              print("Process Logout");
                               signOut();
                             },
                             textColor: white,
@@ -756,7 +756,7 @@ class _HomePageState extends State<HomePage> {
                                 color: Color(0xff28B0C7),
                               ),
                               padding: const EdgeInsets.all(12.0),
-                              child: Text('LogOut',
+                              child: Text('Logout',
                                   style: TextStyle(fontSize: 16)),
                             ),
                           ),

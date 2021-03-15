@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:infoss_hrd/scr/commons.dart';
+import 'package:infoss_hrd/scr/ui/screen/family_information_addpage.dart';
 
 class FamilyInformation extends StatelessWidget {
   @override
@@ -87,7 +88,12 @@ class FamilyInformation extends StatelessWidget {
                       "Add",
                       style: TextStyle(color: white),
                     ),
-                    onPressed: () {})),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => FamilyInformationAddPage()));
+                    })),
           ),
         ],
       ),
